@@ -3,4 +3,4 @@ from .models import *
 # Register your models here.
 
 admin.site.register(Content)
-admin.site.register(Logo)
+admin.site.register(Picture)
