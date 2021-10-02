@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/viradaco/public_html/
+    - export DEPLOYPATH=/home/viradaco/ViradaWebsite/
     - /bin/cp -R * $DEPLOYPATH
