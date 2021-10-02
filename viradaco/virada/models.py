@@ -17,3 +17,6 @@ class Content(models.Model):
 
 	def __str__(self):
 		return str(self.title)
+
+class Picture(models.Model):
+	name=models.CharField(max_length=200)
