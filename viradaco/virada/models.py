@@ -20,3 +20,26 @@ class Content(models.Model):
 
 class Picture(models.Model):
 	name=models.CharField(max_length=200)
+	image=models.ImageField()
+	text=models.TextField()
+
+	def imageURL(self):
+		try:
+			url=self.image.url
+		except:
+			url=''
+		return url
+
+	def __str__(self):
+		return str(self.title)
+
+class Logo(models.Model):
+	image=models.ImageField()
+	text=models.TextField()
+
+	def imageURL(self):
+		try:
+			url=self.image.url
+		except:
+			url=''
+		return url
