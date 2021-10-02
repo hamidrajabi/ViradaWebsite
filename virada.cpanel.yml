@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/viradaco/ViradaWebsite
+    - /bin/cp -R $DEPLOYPATH
