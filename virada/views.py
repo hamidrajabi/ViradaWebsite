@@ -14,5 +14,8 @@ def home(request):
 
 def orderPage(request):
 	form=OrderForm
-
-	return render(request,'Virada/order.html',{'form':form})
+	try:
+		logo=Picture.objects.get(title="logo")
+	except:
+		logo=""
+	return render(request,'Virada/order.html',{'form':form,'logo':logo})
