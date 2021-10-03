@@ -3,13 +3,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
-class Customer(models.Model):
-	name=models.CharField(max_length=200)
-	phone_number = PhoneNumberField()
-	email=models.EmailField(null=True,blank=True)
 
-	def __str__(self):
-		return str(self.name)
 
 class Content(models.Model):
 	priority=models.IntegerField(null=True)
@@ -42,9 +36,28 @@ class Picture(models.Model):
 	def __str__(self):
 		return str(self.title)
 
-class order(models.Model):
+
+class Customer(models.Model):
+	name=models.CharField(max_length=200)
+	phone_number = PhoneNumberField()
+	email=models.EmailField(null=True,blank=True)
+	# address=models.ForeignKey(Address,on_delete=models.CASCADE,null=True,blank=True)
+
+
+	def __str__(self):
+		return str(self.name)
+
+class Address(models.Model):
+	customer=models.OneToOneField(Customer,on_delete=models.CASCADE,null=True,blank=True)
+	city=models.CharField(max_length=200)
+	state=models.CharField(max_length=200)
+
+	def __str__(self):
+		return str(self.city)+str(self.state)
+
+class Order(models.Model):
 	customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
-	address=models.CharField(max_length=1000)
+	address=models.ForeignKey(Address,on_delete=models.CASCADE)
 	date_added=models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
