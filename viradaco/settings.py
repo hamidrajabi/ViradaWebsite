@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-hl#q+t4*pxz-ee327rasah=0u1pfe66up!&0ky@ycs!u1qavsa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['viradaco.ir','www.viradaco.ir']
+ALLOWED_HOSTS = ['viradaco.ir','www.viradaco.ir','127.0.0.1']
 
 
 # Application definition
@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phonenumber_field',
+    'widget_tweaks',
     'virada',
-
 ]
 
 MIDDLEWARE = [
@@ -135,5 +135,6 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'static/images')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-SECURE_SSL_REDIRECT=True
+
+SECURE_SSL_REDIRECT=False
 
