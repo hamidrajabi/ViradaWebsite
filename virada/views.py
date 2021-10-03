@@ -4,7 +4,7 @@ from .forms import *
 # Create your views here.
 def home(request):
 	# Author.objects.order_by('-score')
-	contents=Content.objects.order_by('-priority')
+	contents=Content.objects.order_by('priority')
 
 	try:
 		logo=Picture.objects.get(title="logo")
