@@ -30,6 +30,7 @@ def orderPage(request):
 			order.address.city=request.POST.get('cityName')
 			order.address.state=request.POST.get('stateName')
 			order.save()
+			return render(request,'Virada/success-page.html')
 		else:
 			form=OrderForm()
 	try:
@@ -38,8 +39,15 @@ def orderPage(request):
 		logo=""
 	try:
 		order_header=Picture.objects.get(title="order_header")
+		order_header_mobile=Picture.objects.get(title="order_header_mobile")
+		favicon=Picture.objects.get(title="favicon")
 	except:
 		order_header=''
+		order_header_mobile=''
+		favicon=''
 
-	return render(request,'Virada/order.html',{'form':form,'logo':logo,'order_header':order_header})
+	return render(request,'Virada/order.html',{'form':form,'logo':logo,
+		'order_header':order_header,
+		'order_header_mobile':order_header_mobile,
+		'favicon':favicon})
 
