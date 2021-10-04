@@ -1,7 +1,13 @@
 from django.shortcuts import render
 from .models import *
 from .forms import *
+import ghasedak
+
+sms = ghasedak.Ghasedak("ca3850956834bf4445dff3f9c6e08cba6b22b84d763814abcfb4488a1f35d0e0")
 # Create your views here.
+
+
+
 def home(request):
 	# Author.objects.order_by('-score')
 	contents=Content.objects.order_by('priority')
@@ -31,6 +37,7 @@ def orderPage(request):
 			order.address.city=request.POST.get('cityName')
 			order.address.state=request.POST.get('stateName')
 			order.save()
+			sms.send({'message':'ویرادا: یک سفارش جدید ثبت گردید!', 'receptor' : '09153626468','linenumber': "10008566"})
 			return render(request,'Virada/success-page.html')
 		else:
 			form=OrderForm()
