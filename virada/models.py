@@ -10,8 +10,8 @@ class Content(models.Model):
 	title=models.CharField(max_length=200)
 	image=models.ImageField()
 	text=models.TextField()
-	link_title=models.CharField(max_length=500)
-	link=models.CharField(max_length=500)
+	link_title=models.CharField(max_length=500,null=True,blank=True)
+	link=models.CharField(max_length=500,null=True,blank=True)
 
 
 	def imageURL(self):
@@ -32,6 +32,20 @@ class Picture(models.Model):
 	def imageURL(self):
 		try:
 			url=self.image.url
+		except:
+			url=''
+		return url
+
+	def __str__(self):
+		return str(self.title)
+
+class File(models.Model):
+	title=models.CharField(max_length=200,null=True,blank=True)
+	file=models.FileField()
+
+	def fileURL(self):
+		try:
+			url=self.file.url
 		except:
 			url=''
 		return url
