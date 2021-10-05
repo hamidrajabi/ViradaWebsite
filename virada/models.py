@@ -10,6 +10,9 @@ class Content(models.Model):
 	title=models.CharField(max_length=200)
 	image=models.ImageField()
 	text=models.TextField()
+	link_title=models.CharField(max_length=500)
+	link=models.CharField(max_length=500)
+
 
 	def imageURL(self):
 		try:
