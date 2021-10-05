@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hl#q+t4*pxz-ee327rasah=0u1pfe66up!&0ky@ycs!u1qavsa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['viradaco.ir','www.viradaco.ir','127.0.0.1']
 
