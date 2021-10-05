@@ -76,6 +76,13 @@
 								<div class="feature-extended-body is-revealing">
 									<h3 class="mt-0 mb-16">{{content.title}}</h3>
 									<p class="m-0">{{content.text}}</p>
+									{%if content.link != None%}
+									<p class="m-0">
+										<a href="{{content.link}}">
+										{{content.link_title}}
+										</a>
+									</p>
+									{%endif%}
 								</div>
 							</div>
 							{%endif%}
