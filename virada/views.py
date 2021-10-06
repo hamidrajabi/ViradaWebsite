@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 import ghasedak
+from django.http import HttpResponse
+
 
 sms = ghasedak.Ghasedak("ca3850956834bf4445dff3f9c6e08cba6b22b84d763814abcfb4488a1f35d0e0")
 # Create your views here.
@@ -40,6 +42,7 @@ def orderPage(request):
 			sms.send({'message':'ویرادا: یک سفارش جدید ثبت گردید!', 'receptor' : '09153626468','linenumber': "10008566"})
 			return render(request,'Virada/success-page.html')
 		else:
+			# return HttpResponse(form.errors.values()) 
 			form=OrderForm()
 	try:
 		logo=Picture.objects.get(title="logo")

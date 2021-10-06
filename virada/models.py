@@ -56,7 +56,7 @@ class File(models.Model):
 
 class Customer(models.Model):
 	name=models.CharField(max_length=200)
-	phone_number = PhoneNumberField()
+	phone_number = models.CharField(max_length=12)
 	email=models.EmailField(null=True,blank=True)
 	# address=models.ForeignKey(Address,on_delete=models.CASCADE,null=True,blank=True)
 

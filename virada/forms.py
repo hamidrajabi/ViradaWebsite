@@ -14,4 +14,4 @@ class OrderForm(forms.ModelForm):
 		widgets={
 		'address':forms.HiddenInput(),
 		}
-		fields_required=['name','email','phone_number']
+		fields_required=['name','phone_number']
