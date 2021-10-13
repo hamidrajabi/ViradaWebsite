@@ -28,7 +28,12 @@
                 </div>
             </div>
         </header>
-
+<style>
+    @font-face {
+   font-family: IRANSans;
+   src: url("{% static 'fonts/IRANSans.ttf'%}");
+ }
+</style>
         <main>
 
 
@@ -105,7 +110,7 @@
 								<h2 class="section-title mt-0">با ما در تماس باشید.</h2>
 								<p class="section-paragraph">برای اطلاع بیشتر از خصوصیات و امکانات ویرادا و سفارش آن با ما تماس بگیرید.</p>
 								<div class="cta-cta">
-									<a class="button button-primary button-wide-mobile" href="#">ویرادا را سفارش دهید</a>
+									<a class="button button-primary button-wide-mobile" href="{%url 'Order'%}">ویرادا را سفارش دهید</a>
 								</div>
 							</div>
 						</div>
