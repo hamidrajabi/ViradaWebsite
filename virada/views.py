@@ -16,10 +16,12 @@ def home(request):
 
 	try:
 		logo=Picture.objects.get(title="logo")
+		IntroductionVideo=File.objects.get(title="IntroductionVideo")
 	except:
 		logo=""
+		IntroductionVideo=""
 
-	return render(request,'Virada/home.html',{'contents':contents,'logo':logo})
+	return render(request,'Virada/home.html',{'contents':contents,'logo':logo,'IntroductionVideo':IntroductionVideo})
 
 def orderPage(request):
 	form=OrderForm()
