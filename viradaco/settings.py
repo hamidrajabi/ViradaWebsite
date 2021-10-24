@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'widget_tweaks',
     'virada',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
